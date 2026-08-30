@@ -69,7 +69,10 @@
         </ul>
 
         <div class="nav-actions">
-          <a href="assets/Ritam_Pal_Resume.pdf" download="Ritam_Pal_Resume.pdf" class="btn btn-glass btn-sm">
+          <button id="sound-toggle-btn" class="btn-icon-sound" aria-label="Toggle Sound" title="Sound Effects: ON">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+          <a href="assets/ritam_pal_resume.pdf" download="Ritam_Pal_Resume.pdf" class="btn btn-glass btn-sm">
             <i class="fa-solid fa-download"></i> Download CV
           </a>
           <button class="mobile-toggle" aria-label="Toggle Navigation">
@@ -107,7 +110,7 @@
               <a href="#projects" class="btn btn-primary">
                 View Projects <i class="fa-solid fa-arrow-right"></i>
               </a>
-              <a href="assets/Ritam_Pal_Resume.pdf" download="Ritam_Pal_Resume.pdf" class="btn btn-glass">
+              <a href="assets/ritam_pal_resume.pdf" download="Ritam_Pal_Resume.pdf" class="btn btn-glass">
                 <i class="fa-solid fa-file-pdf"></i> Download CV
               </a>
               <a href="#contact" class="btn btn-glass">
@@ -140,7 +143,7 @@
             <div class="portal-glow-ring"></div>
 
             <div class="avatar-container">
-              <img src="assets/images/ritam-pal.jpg" alt="Ritam Pal" class="avatar-img" fetchpriority="high">
+              <img src="assets/images/ritam-pal.jpg" alt="Ritam Pal" class="avatar-img" fetchpriority="high" onerror="if(!this.dataset.tried){this.dataset.tried=1; this.src='assests/images/ritam-pal.jpg';}">
               <div class="avatar-overlay-gradient"></div>
             </div>
 
@@ -197,7 +200,7 @@
               </div>
 
               <p class="about-bio">
-                Aspiring AI Engineer with a strong interest in machine learning, deep learning, data science, and intelligent system development. Experienced in Python, research, and building data-driven solutions, with a growing focus on developing and deploying practical AI applications. Currently pursuing B.Tech in CSE (AI & ML) alongside a BS in Data Science & AI from IIT Guwahati.
+                Aspiring AI Engineer with a strong interest in machine learning, deep learning, data science, and intelligent system development. Experienced in Python, research, and building data-driven solutions, with a growing focus on developing and deploying practical AI applications. Currently pursuing B.Tech in CSE (AI & ML) at Institute of Engineering & Management.
               </p>
 
               <div class="about-meta-grid">
@@ -247,7 +250,7 @@
             </div>
 
             <div class="about-actions" style="display:flex; gap:12px; flex-wrap:wrap;">
-              <a href="assets/Ritam_Pal_Resume.pdf" download="Ritam_Pal_Resume.pdf" class="btn btn-primary btn-sm">
+              <a href="assets/ritam_pal_resume.pdf" download="Ritam_Pal_Resume.pdf" class="btn btn-primary btn-sm">
                 <i class="fa-solid fa-download"></i> Get Resume PDF
               </a>
               <a href="#contact" class="btn btn-glass btn-sm">
@@ -256,72 +259,153 @@
             </div>
           </div>
 
-          <!-- My Expertise Card with Animated Progress Bars (Backend at 70%) -->
+          <!-- My Expertise Card with Pointwise Interactive Toggles (No Percentages) -->
           <div class="glass-card expertise-card">
-            <div class="section-title-wrap">
-              <div class="section-title-icon"><i class="fa-solid fa-code"></i></div>
-              <h2 class="section-title">My Expertise</h2>
+            <div class="expertise-header-row">
+              <div class="section-title-wrap">
+                <div class="section-title-icon"><i class="fa-solid fa-code"></i></div>
+                <h2 class="section-title">My Expertise</h2>
+              </div>
+              <span class="expertise-badge"><i class="fa-solid fa-layer-group"></i> Pointwise Notes</span>
             </div>
 
-            <div class="skills-progress-list">
+            <div class="skills-toggle-list">
               
-              <div class="skill-progress-item">
-                <div class="skill-info">
-                  <span class="skill-name">AI / ML & PyTorch / Scikit-Learn</span>
-                  <span class="skill-pct">95%</span>
-                </div>
-                <div class="progress-track">
-                  <div class="progress-fill" data-width="95%" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <div class="skill-progress-item">
-                <div class="skill-info">
-                  <span class="skill-name">Python / Data Science (NumPy, Pandas, CV/NLP)</span>
-                  <span class="skill-pct">95%</span>
-                </div>
-                <div class="progress-track">
-                  <div class="progress-fill" data-width="95%" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <div class="skill-progress-item">
-                <div class="skill-info">
-                  <span class="skill-name">Frontend (React.js / Next.js / TypeScript)</span>
-                  <span class="skill-pct">90%</span>
-                </div>
-                <div class="progress-track">
-                  <div class="progress-fill" data-width="90%" style="width: 0%;"></div>
+              <!-- Toggle 1: AI / ML & PyTorch -->
+              <div class="skill-toggle-item active">
+                <button class="skill-toggle-header" type="button" aria-expanded="true">
+                  <div class="skill-header-left">
+                    <span class="skill-dot-icon" style="background: rgba(0, 242, 254, 0.2); color: var(--cyan-primary);">
+                      <i class="fa-solid fa-brain"></i>
+                    </span>
+                    <span class="skill-name">AI / ML & PyTorch / Scikit-Learn</span>
+                  </div>
+                  <div class="skill-header-right">
+                    <span class="toggle-tag">3 Core Points</span>
+                    <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                  </div>
+                </button>
+                <div class="skill-toggle-content">
+                  <ul class="skill-notes-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Custom deep neural network architectures & training pipelines implemented in PyTorch.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Supervised & unsupervised machine learning with Scikit-Learn (XGBoost, Random Forest, SVM).</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Model validation, loss optimization, hyperparameter tuning & quantization for edge deployment.</li>
+                  </ul>
                 </div>
               </div>
 
-              <div class="skill-progress-item">
-                <div class="skill-info">
-                  <span class="skill-name">Backend Architecture & APIs (Node.js / Express)</span>
-                  <span class="skill-pct">70%</span>
-                </div>
-                <div class="progress-track">
-                  <div class="progress-fill" data-width="70%" style="width: 0%;"></div>
+              <!-- Toggle 2: Python / Data Science -->
+              <div class="skill-toggle-item">
+                <button class="skill-toggle-header" type="button" aria-expanded="false">
+                  <div class="skill-header-left">
+                    <span class="skill-dot-icon" style="background: rgba(0, 245, 160, 0.2); color: var(--teal-accent);">
+                      <i class="fa-brands fa-python"></i>
+                    </span>
+                    <span class="skill-name">Python / Data Science (NumPy, Pandas, CV/NLP)</span>
+                  </div>
+                  <div class="skill-header-right">
+                    <span class="toggle-tag">3 Core Points</span>
+                    <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                  </div>
+                </button>
+                <div class="skill-toggle-content">
+                  <ul class="skill-notes-list">
+                    <li><i class="fa-solid fa-circle-check"></i> High-performance vector operations and multidimensional numerical analysis via NumPy.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Large-scale ETL, data cleaning, automated feature engineering and aggregation in Pandas.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Computer Vision (OpenCV) image pipelines & Natural Language Processing (Tokenization, Embeddings).</li>
+                  </ul>
                 </div>
               </div>
 
-              <div class="skill-progress-item">
-                <div class="skill-info">
-                  <span class="skill-name">n8n Automation & LLM Orchestration</span>
-                  <span class="skill-pct">92%</span>
-                </div>
-                <div class="progress-track">
-                  <div class="progress-fill" data-width="92%" style="width: 0%;"></div>
+              <!-- Toggle 3: Frontend -->
+              <div class="skill-toggle-item">
+                <button class="skill-toggle-header" type="button" aria-expanded="false">
+                  <div class="skill-header-left">
+                    <span class="skill-dot-icon" style="background: rgba(59, 130, 246, 0.2); color: var(--blue-accent);">
+                      <i class="fa-brands fa-react"></i>
+                    </span>
+                    <span class="skill-name">Frontend (React.js / Next.js / TypeScript)</span>
+                  </div>
+                  <div class="skill-header-right">
+                    <span class="toggle-tag">3 Core Points</span>
+                    <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                  </div>
+                </button>
+                <div class="skill-toggle-content">
+                  <ul class="skill-notes-list">
+                    <li><i class="fa-solid fa-circle-check"></i> High-speed, responsive Single Page Applications (SPA) and Server-Side Rendered (SSR) apps.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Strict TypeScript type safety, modular component architecture, and reactive state stores.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Modern UI/UX implementation with cyber glassmorphism, micro-interactions & Web APIs.</li>
+                  </ul>
                 </div>
               </div>
 
-              <div class="skill-progress-item">
-                <div class="skill-info">
-                  <span class="skill-name">SQL (PostgreSQL) / MongoDB & Research Methods</span>
-                  <span class="skill-pct">85%</span>
+              <!-- Toggle 4: Backend -->
+              <div class="skill-toggle-item">
+                <button class="skill-toggle-header" type="button" aria-expanded="false">
+                  <div class="skill-header-left">
+                    <span class="skill-dot-icon" style="background: rgba(245, 158, 11, 0.2); color: var(--amber-accent);">
+                      <i class="fa-brands fa-node-js"></i>
+                    </span>
+                    <span class="skill-name">Backend Architecture & APIs (Node.js / Express)</span>
+                  </div>
+                  <div class="skill-header-right">
+                    <span class="toggle-tag">3 Core Points</span>
+                    <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                  </div>
+                </button>
+                <div class="skill-toggle-content">
+                  <ul class="skill-notes-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Scalable RESTful API development with Express.js, structured middleware & error boundaries.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Secure authentication/authorization pipelines (JWT, cryptographic tokens, rate limiting).</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Asynchronous I/O task scheduling, microservice routing, and webhook event listeners.</li>
+                  </ul>
                 </div>
-                <div class="progress-track">
-                  <div class="progress-fill" data-width="85%" style="width: 0%;"></div>
+              </div>
+
+              <!-- Toggle 5: n8n Automation -->
+              <div class="skill-toggle-item">
+                <button class="skill-toggle-header" type="button" aria-expanded="false">
+                  <div class="skill-header-left">
+                    <span class="skill-dot-icon" style="background: rgba(139, 92, 246, 0.2); color: var(--purple-accent);">
+                      <i class="fa-solid fa-gears"></i>
+                    </span>
+                    <span class="skill-name">n8n Automation & LLM Orchestration</span>
+                  </div>
+                  <div class="skill-header-right">
+                    <span class="toggle-tag">3 Core Points</span>
+                    <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                  </div>
+                </button>
+                <div class="skill-toggle-content">
+                  <ul class="skill-notes-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Autonomous multi-agent workflow pipelines and trigger logic designed in self-hosted n8n.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> LLM tool calling, structured JSON output extraction, and prompt chaining with fallback loops.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Seamless enterprise integrations across Telegram, WhatsApp, Email, CRMs and databases.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Toggle 6: SQL / MongoDB -->
+              <div class="skill-toggle-item">
+                <button class="skill-toggle-header" type="button" aria-expanded="false">
+                  <div class="skill-header-left">
+                    <span class="skill-dot-icon" style="background: rgba(0, 242, 254, 0.2); color: var(--cyan-deep);">
+                      <i class="fa-solid fa-database"></i>
+                    </span>
+                    <span class="skill-name">SQL (PostgreSQL) / MongoDB & Research Methods</span>
+                  </div>
+                  <div class="skill-header-right">
+                    <span class="toggle-tag">3 Core Points</span>
+                    <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                  </div>
+                </button>
+                <div class="skill-toggle-content">
+                  <ul class="skill-notes-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Relational database schema design, index optimization, constraints & complex SQL queries.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Flexible document modeling, aggregation pipelines and transactional consistency in MongoDB.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Mathematical modeling, algorithmic hypothesis testing & academic research methodology.</li>
+                  </ul>
                 </div>
               </div>
 
@@ -420,25 +504,7 @@
 
         <div class="timeline-grid">
           
-          <!-- Education 1: IIT Guwahati -->
-          <div class="glass-card timeline-card">
-            <div class="timeline-header">
-              <h3 class="timeline-role">Bachelor of Science - Data Science And AI</h3>
-              <span class="timeline-period">08-2029 (2025–Present)</span>
-            </div>
-            <div class="timeline-org">
-              <i class="fa-solid fa-university" style="color:var(--cyan-primary);"></i>
-              Indian Institute of Technology Guwahati
-            </div>
-            <div class="timeline-location">
-              <i class="fa-solid fa-globe"></i> Guwahati (Online)
-            </div>
-            <div class="timeline-score-badge">
-              <i class="fa-solid fa-award"></i> CPI: 8.22
-            </div>
-          </div>
-
-          <!-- Education 2: IEM Salt Lake -->
+          <!-- Education 1: IEM Salt Lake -->
           <div class="glass-card timeline-card">
             <div class="timeline-header">
               <h3 class="timeline-role">B.Tech - Computer Science & Engineering (AI & ML)</h3>
@@ -562,6 +628,7 @@
         <!-- Filter Bar -->
         <div class="project-filter-bar">
           <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="fintech">FinTech & Payments</button>
           <button class="filter-btn" data-filter="ai">AI & ML</button>
           <button class="filter-btn" data-filter="healthcare">Healthcare</button>
           <button class="filter-btn" data-filter="automation">Automation</button>
@@ -570,6 +637,44 @@
 
         <!-- Projects Grid -->
         <div class="projects-grid">
+
+          <!-- Project 0: Vittape (Next-Gen UPI & Social Payments) -->
+          <div class="glass-card project-card" data-category="fintech security automation">
+            <div class="project-preview-mockup">
+              <div class="mockup-bg-pattern" style="background: radial-gradient(circle at top right, #00f2fe33, transparent), linear-gradient(135deg, #071738, #020716);">
+                <div style="padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #00f2fe;">
+                  <span style="color: #00f5a0;">⚡ Next-Gen UPI & Social Payments</span><br>
+                  <span style="color: #94a3b8;">&gt; Freelance Vault: Encrypted & Live</span><br>
+                  <span style="color: #38bdf8;">Network: 256-Bit TLS Secured</span>
+                </div>
+              </div>
+              <span class="project-tag-pill" style="border-color: rgba(0, 245, 160, 0.4); color: var(--teal-accent);">
+                <i class="fa-solid fa-bolt" style="margin-right: 4px;"></i> FinTech / Web3 Payments
+              </span>
+            </div>
+            
+            <h3 class="project-title">Vittape</h3>
+            <p class="project-desc">
+              A Gen-Z user-friendly encrypted payment app for freelance payments and secured transactions. Built with instant UPI settlement pipelines, social split-pay, and bank-grade end-to-end encryption.
+            </p>
+
+            <div class="project-tech-chips">
+              <span class="tech-chip">Next.js</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">Encrypted Payments</span>
+              <span class="tech-chip">UPI Gateways</span>
+              <span class="tech-chip">Web Security</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://vittape.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="Vittape - Next-Gen UPI & Social Payments">
+                Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://vittape.vercel.app/" target="_blank" rel="noopener noreferrer" class="icon-arrow-circle" aria-label="Open Vittape - Next-Gen UPI & Social Payments">
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
 
           <!-- Project 1: MedVerify AI -->
           <div class="glass-card project-card" data-category="ai healthcare">
@@ -1113,7 +1218,7 @@
         </a>
 
         <p class="footer-copy">
-          &copy; 2026 Ritam Pal. All rights reserved. B.Tech CSE (AI & ML) & BS Data Science & AI.
+          &copy; 2026 Ritam Pal. All rights reserved. B.Tech CSE (AI & ML).
         </p>
 
         <ul class="footer-nav">
@@ -1146,13 +1251,12 @@
       <div style="background: rgba(4, 9, 24, 0.85); padding: 24px; border-radius: 16px; border: 1px solid rgba(0, 242, 254, 0.2); margin-bottom: 24px;">
         <h4 style="color: var(--cyan-primary); font-size: 1.2rem; margin-bottom: 4px;">Ritam Pal</h4>
         <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 14px;">
-          B.Tech CSE (AI & ML) & B.Sc (Hons.) Data Science & AI | Baguiati, West Bengal | +91 6290721531 | ritamesh2006@gmail.com
+          B.Tech CSE (AI & ML) | Baguiati, West Bengal | +91 6290721531 | ritamesh2006@gmail.com
         </p>
         
         <h5 style="color: #fff; margin-top: 14px; margin-bottom: 6px; font-size: 0.95rem;">Education</h5>
         <ul style="color: var(--text-muted); font-size: 0.85rem; margin-left: 20px; line-height: 1.6;">
-          <li><strong>IIT Guwahati Online:</strong> BS Data Science & AI (CPI: 8.22) (2025–Present)</li>
-          <li><strong>IEM Salt Lake:</strong> B.Tech CSE (YGPA: 9.03) (2025–Present)</li>
+          <li><strong>IEM Salt Lake:</strong> B.Tech CSE (AI & ML) (YGPA: 9.03) (2025–Present)</li>
           <li><strong>Aditya Academy:</strong> Class XII CBSE (89%) (2023–2025)</li>
           <li><strong>Pramila Memorial:</strong> Class X ICSE (95%) (2009–2023)</li>
         </ul>
@@ -1168,7 +1272,7 @@
 
       <div style="display: flex; gap: 14px; justify-content: flex-end;">
         <button type="button" class="btn btn-glass" onclick="document.getElementById('cv-modal').classList.remove('active');">Close</button>
-        <a href="assets/Ritam_Pal_Resume.pdf" download="Ritam_Pal_Resume.pdf" class="btn btn-primary">
+        <a href="assets/ritam_pal_resume.pdf" download="Ritam_Pal_Resume.pdf" class="btn btn-primary">
           <i class="fa-solid fa-download"></i> Download Full Resume PDF
         </a>
       </div>
